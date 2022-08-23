@@ -23,14 +23,14 @@ const ProductScreen = () => {
   }, [dispatch, productID]);
 
   const addToCartHandler = () => {
-    navigate(`/cart`);
+    navigate(`/cart/${productID}?qty=${qty}`);
   };
 
   return (
     <>
-      <Link className='btn btn-light my-3' to='/'>
+      <Button className='btn btn-light my-3' onClick={() => navigate(-1)}>
         Go Back
-      </Link>
+      </Button>
       {loading ? (
         <Loader />
       ) : error ? (
